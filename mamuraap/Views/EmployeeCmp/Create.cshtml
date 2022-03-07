@@ -1,0 +1,66 @@
+﻿@model EmployeeCreateViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title"><h4>Add Employee</h4></div>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create" asp-controller="EmployeeCmp" method="post">
+
+
+                    <div class="form-group">
+                        <label>Employee Name</label>
+                        <input type="text" class="form-control" asp-for="Name" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Employee Age</label>
+                        <input type="number" class="form-control" asp-for="Age" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Employee Email</label>
+                        <input type="text" class="form-control" asp-for="Email" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Employee Salary</label>
+                        <input type="number" class="form-control" asp-for="salary" />
+                    </div>
+                      
+                    <div class="form-group">
+                        <label> Employee Department</label>
+                         
+                        <div class="row">
+                            <div class="col-10">
+                                <select asp-for="Department" class="form-control">
+                                    <option value="">Select</option>
+                                    @foreach (var d in ViewBag.depts)
+                                    {
+                                        <option value="@d.Id">@d.name</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <a  asp-action="CreateDepartment" asp-controller="EmployeeCmp" class="btn btn-outline-info">Create</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-outline-success" value="Register"/>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

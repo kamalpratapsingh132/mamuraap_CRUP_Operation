@@ -1,0 +1,18 @@
+﻿@model mamuraap.Models.Employee
+@{
+    ViewData["Title"] = "GetDetails";
+}
+
+<div class="card" style="width:400px">
+    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOSIZ6hZseAPKb42yOVWSqt00bWSi8yusbMQ&usqp=CAU" alt="Card image">
+    <div class="card-body">
+        <h4 class="card-title">@Model.Name</h4>
+        <p class="card-text">
+            <h3>Email:@Model.Email</h3>
+            <h3>Email:@Model.Age</h3>
+            <h3>Email:@Model.salary</h3>
+
+        </p>
+        <a asp-action="GetEmployee" a sp-Controller ="Employee" asp-route-id="@Model.Id" class="btn btn-primary">Back To List</a>
+    </div>
+</div>  

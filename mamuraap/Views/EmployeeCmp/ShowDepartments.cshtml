@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Department>
+@{
+    ViewData["Title"] = "ShowDepartments";
+}
+
+<h1>Show Departments</h1>
+<p class="text-center text-info">@TempData["error"]</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+@foreach (var em in Model)
+{
+<tr>
+    <td>@em.Id</td>
+    <td>@em.name</td>
+    <td>
+        <a asp-action="DeleteDepartment" asp-controller="EmployeeCmp"
+        asp-route-id="@em.Id" class="btn btn-warning" onclick="return confirm('Are you sure to delete the record ? ')">Delete</a>
+
+    </td>
+</tr>
+}
+    <tr>
+        <td colspan="3">
+            <a asp-action="Create" class=" btn btn-info">Back To Create</a>
+        </td>
+    </tr>
+            
+</table>

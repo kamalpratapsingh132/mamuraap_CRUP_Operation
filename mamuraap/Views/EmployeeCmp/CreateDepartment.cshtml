@@ -1,0 +1,30 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "Department";
+}
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title"><h4>Add Department</h4></div>
+            </div>
+            <div class="card-body">
+                <form asp-action="CreateDepartment" asp-controller="EmployeeCmp" method="post">
+
+
+                    <div class="form-group">
+                        <label>Department Name</label>
+                        <input type="text" class="form-control" asp-for="name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-outline-success" value="Submit" />
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

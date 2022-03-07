@@ -1,0 +1,41 @@
+﻿@model IEnumerable<mamuraap.Models.ViewModel.EmployeeViewModel>
+@{
+    ViewData["Title"] = "Combinedata";
+}
+<div class="box ">
+    <h1>Employee Record </h1>
+    <a asp-action="Create" asp-controller="EmployeeCmp" class=" = btn btn-outline-info">Add Employee</a>
+    <p class="text-center text-info">@TempData["error"]</p>
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Dept</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var emps in Model)
+        {
+    <tr>
+        <td>@emps.Id</td>
+        <td>@emps.Name</td>
+        <td>@emps.Age</td>
+        <td>@emps.Email</td>
+        <td>@emps.salary</td>
+        <td>@emps.Department</td>
+        <td>
+            <a asp-action="Update" asp-controller="EmployeeCmp" asp-route-id="@emps.Id" class=" btn btn-warning">Edit</a>
+       
+        
+            <a asp-action="Delete" asp-controller="EmployeeCmp" asp-route-id="@emps.Id" class=" btn btn-warning" onclick="return confirm('Are you sure to delete record ?')">Delete</a>
+            
+        </td>
+    </tr>
+
+        }
+    </table>
+</div>
+

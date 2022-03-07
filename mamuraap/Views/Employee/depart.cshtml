@@ -1,0 +1,14 @@
+﻿@model IEnumerable<mamuraap.Models.Department> 
+@{
+    ViewData["Title"] = "depart";
+}
+<div class=" box ">
+    <ul>
+        @foreach (var em in Model)
+        {
+           <li><a href="GetEmployee/@em.Id"> @em.name </a> </li>
+        }
+       </ul>
+</div>
+
+

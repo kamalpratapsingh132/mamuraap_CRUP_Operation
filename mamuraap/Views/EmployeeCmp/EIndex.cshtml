@@ -1,0 +1,52 @@
+﻿@model mamuraap.Models.ViewModel.EmployeeDepartmentModel
+@{
+    ViewData["Title"] = "EIndex";
+}
+
+<div class="box ">
+    <h1>Employee Data list </h1>
+    <table class="table table-bordered">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Email</td>
+            <td>Salary</td>
+        </tr>
+
+        @foreach (var emps in Model.Employee)
+        {
+            <tr>
+                <td>@emps.Id</td>
+                <td>@emps.Name</td>
+                <td>@emps.Age</td>
+                <td>@emps.Email</td>
+                <td>@emps.salary</td>
+            </tr>
+
+        }
+    </table>
+</div>
+
+
+
+<div class="box ">
+    <h1>Department Data list </h1>
+    <table class="table table-bordered">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+        </tr>
+
+        @foreach (var emps in Model.Departments)
+        {
+            <tr>
+                <td>@emps.Id</td>
+                <td>@emps.name</td>
+            </tr>
+
+        }
+    </table>
+</div>
+
+

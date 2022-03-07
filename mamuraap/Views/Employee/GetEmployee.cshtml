@@ -1,0 +1,31 @@
+﻿@model IEnumerable<mamuraap.Models.Employee>
+@{
+    ViewData["Title"] = "GetEmployee";
+}
+
+<div class="box">
+<h1>GetEmployee Data</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Details</th>
+    </tr>
+
+    @foreach (var emps in Model)
+    {
+        <tr>
+            <td>@emps.Name</td>
+            <td><a asp-action="GetDetails" asp-controller="Employee" asp-route-id ="@emps.Id" class="btn btn-outline-info"> View Details</a> </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <a asp-action="depart" asp-controller="Employee" class=" btn btn-outline-info">Back To Departments</a>
+
+            </td>
+        </tr>
+
+    }
+</table>
+</div>
+

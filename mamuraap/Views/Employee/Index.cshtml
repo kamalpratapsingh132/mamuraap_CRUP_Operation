@@ -1,0 +1,31 @@
+﻿@model IEnumerable<mamuraap.Models.Employee>
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="~/css/site.css" rel="stylesheet" />
+<div class="box">
+    <h1>Employee Data</h1>
+    <table class="table table-bordered">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Email</td>
+            <td>Salary</td>
+        </tr>
+
+        @foreach (var emps in Model)
+        {
+            <tr>
+                <td>@emps.Id</td>
+                <td>@emps.Name</td>
+                <td>@emps.Age</td>
+                <td>@emps.Email</td>
+                <td>@emps.salary</td>
+            </tr>
+
+        }
+    </table>
+</div>
+
+
